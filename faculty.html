@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./main.css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <div class="content-wrap">
+            <!-- MENU NAVIGATION -->
+            <div class="topnav" id="myTopnav">
+                <a href="http://www.csit.carleton.ca" class="site-branding">
+                    <img src="https://www.csit.carleton.ca/assets/img/cu_crest.svg">
+                    <span style="text-align: left;">
+                        <small>School of</small><br>
+                        Information Technology
+                    </span>
+                </a>
+                <a href="./index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">About
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">About Us</a>
+                        <a href="#">Schools</a>
+                        <a href="#">Location</a>
+                    </div>
+                </div>
+                <a href="#">News & Events</a>
+                <a href="#">Undergraduate Studies</a>
+                <a href="#">Graduate Studies</a>
+                <a href="#">Our People</a>
+                <a href="#">Contact</a>
+
+                <a href="javascript:void(0);" style="font-size:32px;" class="icon" onclick="myFunction()">&#9776;</a>
+            </div>
+
+            <div class="filter-container">
+                <div class="filter-btn-container">
+                    <button class="filter-menu-btn">Filters</button>
+                </div>
+                <div class="filters-selected">
+                    <ul>
+                        <!-- Dynamically Inserted -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="checkbox-menu-container">
+                <div class="checkbox-group">
+                    <h3>UNDERGRADUATE PROGRAM</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="irm" />Information Resource Management
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="imd" />Interactive Multimedia and Design
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="net" />Network Technology
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="oss" />Optical Systems and Sensors
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <h3>GRADUATE PROGRAM</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="dmGrad" />Digital Media
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="netGrad" />Network Technology
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="dataGrad" />Data Science
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="hciGrad" />Human Computer-Interaction
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <h3>APPOINTMENT</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="faculty" />Faculty
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="fullTime" />Full-time
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="crossFaculty" />Cross-Appointed Faculty
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="researchFaculty" />Adjunct Research Faculty
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <h3>OPPORTUNITIES</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="postdoc" />Postdoc
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="phd" />PhD
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="masters" />Masters
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <h3>RESEARCH AREA</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="gameDesign" />Game Design, Development, & Interactions
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="wearables" />Wearables
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="vr" />Virtual & Augmented Reality
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="animation" />Animation, Virtual Environments, and Simulation
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="storytelling" />Interactive Storytelling
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <h3 style="opacity:0">RESEARCH AREA</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="education" />Educational Technologies
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="dataScienceTopic" />Data Science
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="ioT" />Internet of Things (IoT)
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="networkTechnology" />Network Technology
+                        </li>
+                        <li>
+                        <li>
+                            <input type="checkbox" value="videoImageProcessing" />Video/Image Processing
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <h3 style="opacity:0">RESEARCH AREA</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" value="" />More topics..
+                        </li>
+                        <li>
+
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>Faculty & Full-Time Instructors</h1>
+
+                <div class="faculty-container">
+                    <!-- Dynamic Content -->
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+
+                    <!-- Faculty card  -->
+                    <div class="card-style faculty-card ">
+                        <img class="photo" src="1551385260348.jpg" alt="photo">
+                        <h2 class="">Firstname Lastname</h2>
+                        <h3 class="">Title</h3>
+                        <button class="open-faculty-btn"><img src="./assets/icons/chevron-down.svg"
+                                alt="expand arrow" /></button>
+
+                        <!-- More info -->
+                        <ul class="more-info">
+                            <li class="">
+                                <img src="./assets/icons/Home.svg" alt="home icon">
+                                PM4560
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Call.svg" alt="home icon">
+                                +1 (613) 520-2600 x4184
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Message.svg" alt="home icon">
+                                arya@carleton.ca
+                            </li>
+                            <li class="">
+                                <img src="./assets/icons/Work.svg" alt="home icon">
+                                personal website
+                            </li>
+                        </ul>
+                        <a href="#" class="more-info-link">MORE INFO</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <footer>
+            <p>Carleton University 2021</p>
+        </footer>
+
+
+    </div>
+
+    <script src="./checkbox-menu.js"></script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE ht
+ml>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 7px;
+        }
+
+
+        .checkbox-menu-container {
+            display: none;
+        }
+        .checkbox-menu-container.active {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 5px;
+            font-family: Arial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 130%;
+            /* or 21px */
+            color: #646971;
+        }
+
+        .checkbox-group {
+            margin: 10px;
+            width: 300px;
+            border-right: 1px solid #E6E6E6;
+        }
+
+        h3 {
+            font-family: Helvetica;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+            /* identical to box height */
+
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            color: #2D3748;
+
+        }
+
+        .filter-menu-btn {
+            width: 114px;
+            height: 30px;
+            border: 2px solid black;
+            background-color: white;
+            font-weight: bold;
+            text-align: left;
+        }
+        .filter-menu-btn:after {
+            text-align: center;
+            content: '\002B';
+            display: inline-block;
+            background: black;
+            z-index: 999;
+            font-size: 16px;
+            /* padding: 9px; */
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+            color: white;
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            /* margin-left: 70px; */
+            box-shadow: 1px 0px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .filter-btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .filter-menu-btn:hover.filter-menu-btn:after {
+            cursor: pointer;
+            background: rgb(44, 44, 44);
+        }
+        .filter-menu-btn.open:after {
+            content: "\2212";
+        }
+
+        .filters-selected {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+
+        .filter-pill {
+            display: inline;
+            border-radius: 30px;
+            border: 2px solid #404040;
+            padding: 6px;
+            margin-left: 5px;
+            min-width: 170px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 130%;
+            /* or 21px */
+            color: #404040;
+        }
+        .filter-pill:after {
+            margin-left: 10px;
+            content: '\2715';
+        }
+        .filter-pill:hover {
+            background: #404040;
+            color:white;
+        }
+        .filter-pill:hover.filter-pill:after {
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="filter-container">
+        <div class="filter-btn-container">
+            <button class="filter-menu-btn">Filters</button>
+        </div>
+        <div class="filters-selected">
+            <ul>
+                <!-- Dynamically Inserted -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="checkbox-menu-container">
+        <div class="checkbox-group">
+            <h3>UNDERGRADUATE PROGRAM</h3>
+            <ul>
+                <li>
+                    <input type="checkbox"
+                        value="irm" />Information Resource Management</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="imd" />Interactive Multimedia and Design</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="net" />Network Technology</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value=oss" />Optical Systems and Sensors</li>
+                <li>
+            </ul>
+        </div>
+        <div class="checkbox-group">
+            <h3>GRADUATE PROGRAM</h3>
+            <ul>
+                <li>
+                    <input type="checkbox"
+                        value="dmGrad" />Digital Media</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="netGrad" />Network Technology</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="dataGrad" />Data Science</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="hciGrad" />Human Computer-Interaction</li>
+                <li>
+            </ul>
+        </div>
+        <div class="checkbox-group">
+            <h3>APPOINTMENT</h3>
+            <ul>
+                <li>
+                    <input type="checkbox"
+                        value="faculty" />Faculty</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="fullTime" />Full-time</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="crossFaculty" />Cross-Appointed Faculty</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="researchFaculty" />Adjunct Research Faculty</li>
+                <li>
+            </ul>
+        </div>
+        <div class="checkbox-group">
+            <h3>OPPORTUNITIES</h3>
+            <ul>
+                <li>
+                    <input type="checkbox"
+                        value="postdoc" />Postdoc</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="phd" />PhD</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="masters" />Masters</li>
+                <li>
+            </ul>
+        </div>
+        <div class="checkbox-group">
+            <h3>RESEARCH AREA</h3>
+            <ul>
+                <li>
+                    <input type="checkbox"
+                        value="gameDesign" />Game Design, Development, & Interactions</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="wearables" />Wearables</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="vr" />Virtual & Augmented Reality</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="animation" />Animation, Virtual Environments, and Simulation</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="storytelling" />Interactive Storytelling</li>
+                <li>
+            </ul>
+        </div>
+        <div class="checkbox-group">
+            <h3 style="opacity:0">RESEARCH AREA</h3>
+            <ul>
+                <li>
+                    <input type="checkbox"
+                        value="education" />Educational Technologies</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="dataScienceTopic" />Data Science</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="ioT" />Internet of Things (IoT)</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="networkTechnology" />Network Technology</li>
+                <li>
+                <li>
+                    <input type="checkbox"
+                        value="videoImageProcessing" />Video/Image Processing</li>
+                <li>
+            </ul>
+        </div>
+        <div class="checkbox-group">
+            <h3 style="opacity:0">RESEARCH AREA</h3>
+            <ul>
+                <li>
+                    <input type="checkbox"
+                        value="" />More topics..</li>
+                <li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- Move to another file  -->
+    <div>-
+        <h1>Faculty & Full-Time Inst=ructors</h1>
+
+        <div class="faculty-container">
+            <!-- Dynamic -->
+            <div class="faculty-card">
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="./checkbox-menu.js"></script>
+
+</body>
+
+</html>
