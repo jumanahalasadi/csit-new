@@ -63,8 +63,8 @@ $(document).ready(function () {
 
     // Adding masonry functionality for the faculty grid
     var $grid = $('.faculty-container').masonry({
-        columnWidth: 200,
-        itemSelector: '.faculty-card'
+        itemSelector: '.faculty-card',
+        
     });
 
     // Refresh grid
