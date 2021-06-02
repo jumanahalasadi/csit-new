@@ -96,7 +96,8 @@ $(document).ready(function () {
 
 function updateSelectedFilters() {
 
-    for ([key, value] of Object.entries(activeFiltersHash)) {
+    $(".filters-selected ul").empty();
+    for (const [key, value] of Object.entries(activeFiltersHash)) {
         $(".filters-selected ul").append("<li id='pill-" + key + "'class='filter-pill'>" + value + "</li>");
     }
 
@@ -106,7 +107,7 @@ function updateSelectedFilters() {
 
 function convertHashToArray(hash) {
     let newArray = []
-    for ([key, value] of Object.entries(hash)) {
+    for (const [key, value] of Object.entries(hash)) {
         newArray.push(key);
     }
     return newArray;
