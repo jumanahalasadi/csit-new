@@ -13,13 +13,7 @@
     --light-gray: #c9c9c9;
     --black: #303031;
 
-}
 
-/* Main elements */
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
 }
 
 *,
@@ -28,25 +22,14 @@ body {
     box-sizing: border-box;
 }
 
-body {
-    animation: fadeInAnimation ease 0.3s
-}
 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
+/* Text Styles */
 
 h1 {
     font-family: Helvetica;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 2rem;
     color: var(--black);
 }
 
@@ -54,8 +37,7 @@ h2 {
     font-family: Helvetica;
     font-style: normal;
     font-weight: bold;
-    font-size: 26px;
-    line-height: 28px;
+    font-size: 1.5rem;
     letter-spacing: -0.02em;
     color: var(--black);
 }
@@ -64,23 +46,24 @@ h2 {
     font-family: Helvetica;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 1.25rem;
     line-height: 32px;
     letter-spacing: -0.02em;
     color: var(--black);
 }
 
-p {
+p,
+.body-text {
     color: var(--black);
-    font-size: 16px;
+    font-size: 1rem;
 }
-
-/* Containers */
 
 .center {
     margin: 0 auto;
     text-align: center;
 }
+
+/* Container Styles */
 
 .container {
     display: flex;
@@ -88,11 +71,13 @@ p {
     margin-top: 10px;
     margin-bottom: 10px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .grid {
@@ -167,7 +152,7 @@ button {
 }
 
 .button-white:hover {
-    background: var(--offwhite);
+    background: var(--light-gray);
 }
 
 /* Links */
@@ -289,24 +274,13 @@ th {
     font-weight: bold;
 }
 
-@media only screen and (max-width: 800px) {
-    .container {
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-}
 
 /*  Top bar menu */
 
 body {
     margin: 0;
-    font-family: Arial
+    font-family: Arial;
+    animation: fadeInAnimation ease 0.3s;
 }
 
 .site-branding img {
@@ -349,7 +323,7 @@ body {
     margin-right: 10px;
 }
 
-.topnav .icon {
+.topnav .hamburger-icon {
     display: none;
 }
 
@@ -417,53 +391,6 @@ body {
     display: block;
 }
 
-@media screen and (max-width: 1200px) {
-    .topnav {
-        display: block;
-    }
-
-    .topnav a:not(:first-child),
-    .dropdown .dropbtn {
-        display: none;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .topnav.responsive {
-        position: relative;
-    }
-
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .topnav.responsive .dropdown {
-        float: none;
-    }
-
-    .topnav.responsive .dropdown-content {
-        position: relative;
-    }
-
-    .topnav.responsive .dropdown .dropbtn {
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-}
 
 .banner {
     height: 400px;
@@ -587,17 +514,24 @@ body {
 }
 
 .card-style {
-    width: 18rem;
     margin: 30px;
-    display: inline-block;
-    flex-shrink: 0;
+    position: relative;
+    flex-basis: 100%;
+}
+
+.card-style:hover img {
+    /* box-shadow: 2px 2px gray; */
+}
+
+.card-style a {
+    text-decoration: none;
 }
 
 .card-style .author-name {
     font-family: Helvetica;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 0.8rem;
     line-height: 18px;
     text-transform: uppercase;
     color: var(--dark-gray);
@@ -607,10 +541,9 @@ body {
     font-family: Helvetica;
     font-style: normal;
     font-weight: bold;
-    font-size: 26px;
-    line-height: 30px;
+    font-size: 1rem;
+    line-height: 20px;
     width: 90%;
-    /* 800 */
     color: var(--dark-navy);
     text-decoration: underline solid var(--light-red);
 }
@@ -629,8 +562,9 @@ body {
     box-shadow: -4px 0px 12px rgba(0, 0, 0, 0.25);
     display: flex;
     position: absolute;
-    margin-left: 270px;
-    margin-top: -40px;
+    right: 0;
+    bottom: 10%;
+    display: none;
 }
 
 .card-style .arrow-link:hover {
@@ -646,15 +580,16 @@ body {
 }
 
 .card-style .tag {
-    width: 80px;
+    min-width: 25%;
     height: 48px;
     background: var(--light-red);
-    color: var(--white);
+    color: var(--white) !important;
     position: absolute;
-    margin-left: 200px;
-    margin-top: -280px;
     font-weight: bold;
-    font-size: 24px;
+    top: 0;
+    right: 0;
+    margin-top: 18px;
+    font-size: 1.5rem;
     line-height: 48px;
     /* identical to box height */
     text-align: center;
@@ -674,7 +609,7 @@ body {
     text-transform: uppercase;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1rem;
     /* 800 */
     color: var(--dark-navy);
     text-decoration: none;
@@ -691,10 +626,10 @@ body {
 
 .event-card {
     margin-left: 10px;
-    border-right: 1px solid var(--black);
-    ;
+    border-right: none;
     width: 350px;
     padding: 10px;
+    border-bottom: 1px solid var(--black);
 }
 
 .event-card:last-child {
@@ -713,9 +648,7 @@ body {
     font-family: Arial;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 137.2%;
-    /* or 22px */
+    font-size: 1rem;
     color: var(--dark-gray);
 }
 
@@ -731,14 +664,15 @@ body {
 }
 
 .news-card .news-date {
-    font-weight: normal;
-    font-size: 14px;
-    color: var(--dark-gray);
+    font-weight: lighter;
+    font-size: 1rem;
+    color: var(--black);
+    text-align: left;
 }
 
 .news-link {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1rem;
     text-align: right;
     /* 800 */
     color: var(--dark-navy);
@@ -789,7 +723,7 @@ body {
     font-family: arial;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1rem;
     line-height: 29px;
     /* identical to box height */
     color: white;
@@ -805,7 +739,9 @@ body {
 .sidebyside-card .content {
     text-align: left;
     padding: 3rem;
+    /* width:30%; */
 }
+
 
 .mini-title {
     font-size: 14px;
@@ -830,10 +766,6 @@ body {
     color: var(--black);
     width: 100%;
     text-align: center;
-}
-
-.wide-card .card-style {
-    width: 500px;
 }
 
 .wide-card .card-title {
@@ -913,24 +845,7 @@ footer p {
     color: var(--white) !important;
 }
 
-/* 
-@media only screen and (max-width: 1200px) {
-    .section-content {
-        flex-direction: column;
-    }
 
-    .card-style {
-        width: 500px;
-    }
-} */
-
-@media only screen and (max-width: 500px) {
-    .banner h1 {
-        color: white;
-        margin-left: 30px;
-        width: 80%;
-    }
-}
 
 /* Faculty Filtering  */
 
@@ -968,6 +883,10 @@ li {
     margin: 10px;
     width: 300px;
     border-right: 1px solid #E6E6E6;
+}
+
+.checkbox-group label {
+    cursor: pointer;
 }
 
 h3 {
@@ -1223,6 +1142,76 @@ h3 {
     color: var(--dark-gray);
 }
 
+
+/* Small Screen */
+@media only screen and (min-width: 500px) {
+    .card-style {
+        flex: 1;
+    }
+
+    .event-card {
+        border-right: 1px solid var(--black);
+        border-bottom: none;
+    }
+
+    .wide-card .card-style {
+        width: 500px;
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 1200px) {
+    .topnav {
+        display: block;
+    }
+
+    .topnav a:not(:first-child),
+    .dropdown .dropbtn {
+        display: none;
+    }
+
+    .topnav a.hamburger-icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .hamburger-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .topnav.responsive .dropdown {
+        float: none;
+    }
+
+    .topnav.responsive .dropdown-content {
+        position: relative;
+    }
+
+    .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+
 @media only screen and (max-width: 1100px) {
     .faculty-details-page div:nth-child(2) {
         order: 2;
@@ -1256,5 +1245,16 @@ h3 {
 
     .faculty-details-photo {
         width: 200px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
